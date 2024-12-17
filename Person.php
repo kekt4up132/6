@@ -1,7 +1,5 @@
    <?php
 
-   class OutOfRangeException extends Exception {}
-
    class Person {
        private string $name;
        private int $age;
@@ -27,18 +25,17 @@
        }
    }
 
-   // Пример использования
    try {
-       $person = new Person("Иван", 25);
+       $person = new Person("Роман", 18);
        echo "Имя: " . $person->getName() . ", Возраст: " . $person->getAge() . PHP_EOL;
 
-       $person->setAge(200); // Неверное значение возраста
+       $person->setAge(151);
    } catch (OutOfRangeException $e) {
        echo "Ошибка: " . $e->getMessage() . PHP_EOL;
    }
 
    try {
-       $person->setAge(-5); // Неверное значение возраста
+       $person->setAge(-1);
    } catch (OutOfRangeException $e) {
        echo "Ошибка: " . $e->getMessage() . PHP_EOL;
    }
